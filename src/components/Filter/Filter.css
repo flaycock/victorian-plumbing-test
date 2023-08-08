@@ -17,7 +17,7 @@
 .filterCollapse {
     float: right;
 }
-.filterOptions.collapsed {
+.filterOptions.collapsed, .filterOptionsExpand.collapsed {
     display: none;
 }
 .filterOption {
@@ -38,4 +38,5 @@
 }
 .filterOptionsExpand:hover {
     cursor: pointer;
+    text-decoration: underline;
 }

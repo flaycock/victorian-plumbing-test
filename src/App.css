@@ -1,12 +1,12 @@
 #app {
-    background-color: #f2f0ea;
-    font-family: "Source Sans Pro", sans-serif;
+  background-color: #f2f0ea;
+  font-family: "Source Sans Pro", sans-serif;
 }
 #filterColWrapper {
-    float: left;
-    width: 25%;
+  float: left;
+  width: 25%;
 }
 #resultsColWrapper{
-    float: right;
-    width: 75%;
+  float: right;
+  width: 75%;
 }
