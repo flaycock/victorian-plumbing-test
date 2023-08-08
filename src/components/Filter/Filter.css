@@ -1,0 +1,24 @@
+.filterWrapper {
+    background-color: white;
+    padding: 10px;
+    border: 1px solid rgb(222, 222, 222);
+    margin: 5px 0;
+}
+.filterTitle {
+    padding: 5px 0;
+}
+.filterTitle:hover {
+    cursor: pointer;
+}
+.filterCollapse {
+    float: right;
+}
+.filterOptions.collapsed {
+    display: none;
+}
+.filterOption {
+    display: block;
+}
+.filterOptionCount {
+    color: grey;
+}

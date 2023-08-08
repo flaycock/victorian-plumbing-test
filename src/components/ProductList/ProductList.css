@@ -1,0 +1,21 @@
+#productListWrapper {
+    display: flex;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    margin: 20px;
+}
+#showMore {
+    text-align: center;
+    padding: 10px;
+    margin: auto;
+    margin-bottom: 50px;
+    justify-content: center;
+    background-color: rgb(111, 111, 111);
+    border-radius: 4px;
+    color: white;
+    width: 100px;
+}
+#showMore:hover {
+    cursor: pointer;
+    background-color: black;
+}

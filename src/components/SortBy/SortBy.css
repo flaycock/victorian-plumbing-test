@@ -1,0 +1,12 @@
+#sortByWrapper {
+    padding: 20px 30px;
+}
+#sortByOpts {
+    float: left;
+}
+#sortByLabel {
+    display: flex;
+}
+#numProducts {
+    float: right;
+}
