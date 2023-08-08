@@ -6,6 +6,7 @@ import './Filter.css';
 
 const Filter = ({ filterInfo }, key) => {
     const [expand, setExpand] = useState('expanded');
+    const [optionExpand, setOptionExpand] = useState('collapsed');
     const dispatch = useDispatch();
     let currentParams = useSelector(state => state.data.value);
     let selectedFilterIDs = [];
@@ -14,6 +15,14 @@ const Filter = ({ filterInfo }, key) => {
             selectedFilterIDs.push(filter.identifier);
         });
     });
+
+    const expandFilterOptions = () => {
+        if (optionExpand == 'expanded') {
+            setOptionExpand('collapsed');
+        } else {
+            setOptionExpand('expanded');
+        }
+    }
 
     const collaspeFilter = () => {
         if (expand == 'expanded') {
@@ -58,16 +67,23 @@ const Filter = ({ filterInfo }, key) => {
                 <div className={`filterOptions ${expand}`}>
                     {filterInfo.options.map((option, i) => {
                         return (
-                            <div className="filterOption" key={i}>
+                            <div className={`filterOption ${i > 5 && optionExpand != 'expanded' ? 'hidden' : ''}`} key={i}>
                                 <input id={option.identifier} type="checkbox" checked={selectedFilterIDs.indexOf(option.identifier) != -1} value={JSON.stringify(option.value)} onChange={(e) => applyFilter(e.target)} />
                                 <label>
-                                    {option.displayValue}&nbsp;
-                                    <span className="filterOptionCount">({option.productCount})</span>
+                                    &nbsp;{option.displayValue}&nbsp;
+                                    {option.productCount && (
+                                        <span className="filterOptionCount">({option.productCount})</span>
+                                    )}
                                 </label>
                             </div>
                         )
                     })}
                 </div>
+                {filterInfo.options.length > 6 && (
+                    <div className='filterOptionsExpand' onClick={() => expandFilterOptions()}>
+                        {optionExpand == "expanded" ? 'Show Less' : 'Show More'}
+                    </div>
+                )}
             </div>
         )
     }
